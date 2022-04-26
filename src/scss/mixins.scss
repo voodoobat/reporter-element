@@ -25,3 +25,21 @@
     #{nth($rules, $j)}: nth($coords, $j);
   }
 }
+
+@mixin media($point, $minmax: min) {
+  @if type-of($point) == list {
+    @media (min-width: nth($point, 1)) and (max-width: nth($point, 2) - 0.2) {
+      @content;
+    }
+  }
+
+  @if type-of($point) == number {
+    @if $minmax == max {
+      $point: $point - 0.2;
+    }
+
+    @media (#{$minmax}-width: $point) {
+      @content;
+    }
+  }
+}

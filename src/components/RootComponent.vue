@@ -2,9 +2,10 @@
   <el-container class="app-root" :class="props.type">
     <el-header class="app-head">
       <el-row class="row">
-        <el-col :span="14" class="column"></el-col>
-        <el-col :span="10" class="column lang-column">
+        <el-col :md="20" class="column"></el-col>
+        <el-col :md="4" class="column user-column">
           <lang-switcher />
+          <user-menu />
         </el-col>
       </el-row>
     </el-header>
@@ -17,6 +18,7 @@
 
 <script setup>
 import LangSwitcher from '~/components/layout/LangSwitcher.vue'
+import UserMenu from '~/components/layout/UserMenu.vue'
 
 const props = defineProps({
   type: {
@@ -30,6 +32,20 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+.app-root {
+  min-height: 100%;
+}
+
+.app-main {
+  .app-root.login & {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+  }
+}
+
 .row {
   min-height: 100%;
 }
@@ -39,7 +55,10 @@ const props = defineProps({
   align-items: center;
 }
 
-.lang-column {
+.user-column {
   justify-content: flex-end;
+  > * + * {
+    margin-left: 0.5em;
+  }
 }
 </style>

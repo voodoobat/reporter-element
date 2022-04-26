@@ -1,4 +1,12 @@
 {
-  "log_in": "Betreten",
-  "log_out": "Ausloggen"
+  "log_in_title": "Eingang",
+  "log_in_button": "Betreten",
+  "email_label": "E-mail",
+  "password_label": "Passwort",
+  "restore_title": "Passwort wiederherstellen",
+  "restore_button": "Wiederherstellen",
+  "register_title": "Anmeldung",
+  "register_button": "Anmelden",
+  "name_label": "Name",
+  "restore_link_text": "Vergessen?"
 }

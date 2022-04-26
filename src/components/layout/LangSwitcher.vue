@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown @command="setLang">
+  <el-dropdown trigger="click" @command="setLang">
     <button class="button" type="button">
       <component :is="ui[locale].icon" class="icon-lang" />
       <arrow-down class="icon-arrow" />

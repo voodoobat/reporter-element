@@ -1,4 +1,13 @@
 {
-  "log_in": "Log in",
-  "log_out": "Log out"
+  "log_in_title": "Log in",
+  "log_in_button": "Log in",
+  "log_out_button": "Log out",
+  "email_label": "E-mail",
+  "password_label": "Password",
+  "restore_title": "Restore password",
+  "restore_button": "Restore",
+  "register_title": "Sign in",
+  "register_button": "Sign in",
+  "name_label": "Name",
+  "restore_link_text": "Forgot?"
 }

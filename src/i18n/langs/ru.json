@@ -1,4 +1,13 @@
 {
-  "log_in": "Войти",
-  "log_out": "Выйти"
+  "log_in_title": "Вход",
+  "log_in_button": "Войти",
+  "log_out_button": "Выйти",
+  "email_label": "E-mail",
+  "password_label": "Пароль",
+  "restore_title": "Восстановить пароль",
+  "restore_button": "Восстановить",
+  "register_title": "Регистрация",
+  "register_button": "Зарегистрироваться",
+  "name_label": "Имя",
+  "restore_link_text": "Забыли?"
 }
