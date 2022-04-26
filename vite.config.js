@@ -8,6 +8,19 @@ import eslint from 'vite-plugin-eslint'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
+  plugins: [
+    vue(),
+    eslint(),
+    components({
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      resolvers: [
+        ElementPlusResolver({
+          importStyle: 'sass',
+        }),
+      ],
+    }),
+  ],
   resolve: {
     alias: {
       '~': fileURLToPath(new URL('./src', import.meta.url)),
@@ -20,18 +33,4 @@ export default defineConfig({
       },
     },
   },
-  plugins: [
-    vue(),
-    eslint(),
-    components({
-      extensions: ['vue', 'md'],
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      resolvers: [
-        ElementPlusResolver({
-          importStyle: 'sass',
-        }),
-      ],
-      dts: 'src/components.d.ts',
-    }),
-  ],
 })
