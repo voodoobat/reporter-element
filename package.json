@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "element-plus": "^2.1.9",
-    "vue": "^3.2.32"
+    "vue": "^3.2.32",
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",

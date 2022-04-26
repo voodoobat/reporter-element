@@ -1,3 +1,5 @@
 <template>
-  <h1>Element</h1>
+  <el-config-provider>
+    <router-view />
+  </el-config-provider>
 </template>
