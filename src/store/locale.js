@@ -1,15 +1,9 @@
 import { defineStore } from 'pinia'
+import i18n from '~/i18n'
 
 export const useLocaleStore = defineStore({
   id: 'config',
   state: () => ({
-    lang: 'ru',
+    lang: i18n.global.locale,
   }),
-  actions: {
-    setLang(lang) {
-      this.patch({
-        lang,
-      })
-    },
-  },
 })

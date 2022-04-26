@@ -1,9 +1,9 @@
 <template>
   <el-container class="app-root" :class="props.type">
     <el-header class="app-head">
-      <el-row>
-        <el-col :span="12"></el-col>
-        <el-col :span="12">
+      <el-row class="row">
+        <el-col :span="14" class="column"></el-col>
+        <el-col :span="10" class="column lang-column">
           <lang-switcher />
         </el-col>
       </el-row>
@@ -29,4 +29,17 @@ const props = defineProps({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.row {
+  min-height: 100%;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+}
+
+.lang-column {
+  justify-content: flex-end;
+}
+</style>

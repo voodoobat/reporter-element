@@ -1,15 +1,18 @@
 <template>
   <el-dropdown @command="setLang">
-    <component :is="languages[locale.lang].icon" class="icon" />
+    <button class="button" type="button">
+      <component :is="ui[locale.lang].icon" class="icon-lang" />
+      <arrow-down class="icon-arrow" />
+    </button>
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item
-          v-for="(lang, key) in languages"
+          v-for="({ name }, key) in ui"
           :key="key"
           :command="key"
         >
-          <component :is="languages[key].icon" class="icon" />
-          &nbsp; {{ lang.name }}
+          <component :is="ui[key].icon" class="icon-lang" />
+          &nbsp; {{ name }}
         </el-dropdown-item>
       </el-dropdown-menu>
     </template>
@@ -17,37 +20,27 @@
 </template>
 
 <script setup>
+import { ArrowDown } from '@element-plus/icons-vue'
+import i18n, { ui } from '~/i18n'
 import { useLocaleStore } from '~/store/locale'
-
-import RuSvg from 'flag-icons/flags/4x3/ru.svg'
-import GbSvg from 'flag-icons/flags/4x3/gb.svg'
-import DeSvg from 'flag-icons/flags/4x3/de.svg'
-
-const languages = {
-  ru: {
-    icon: RuSvg,
-    name: 'Русский',
-  },
-  en: {
-    icon: GbSvg,
-    name: 'English',
-  },
-  de: {
-    icon: DeSvg,
-    name: 'Deutsch',
-  },
-}
 
 const locale = useLocaleStore()
 const setLang = (lang) => {
   locale.lang = lang
+  localStorage.setItem('ui_lang', lang)
+  i18n.global.locale = lang
 }
 </script>
 
 <style lang="scss" scoped>
-.icon {
+.icon-arrow {
+  width: 1em;
+  margin-left: 0.2em;
+}
+
+.icon-lang {
   width: 1.3em;
-  margin-right: 0.2em;
   border: 1px solid var(--el-text-color-secondary);
+  margin-right: 0.2em;
 }
 </style>
