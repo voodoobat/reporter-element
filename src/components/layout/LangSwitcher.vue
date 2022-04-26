@@ -1,7 +1,7 @@
 <template>
   <el-dropdown @command="setLang">
     <button class="button" type="button">
-      <component :is="ui[locale.lang].icon" class="icon-lang" />
+      <component :is="ui[locale].icon" class="icon-lang" />
       <arrow-down class="icon-arrow" />
     </button>
     <template #dropdown>
@@ -20,14 +20,14 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { ArrowDown } from '@element-plus/icons-vue'
 import i18n, { ui } from '~/i18n'
-import { useLocaleStore } from '~/store/locale'
 
-const locale = useLocaleStore()
+const locale = ref(i18n.global.locale)
 const setLang = (lang) => {
-  locale.lang = lang
   localStorage.setItem('ui_lang', lang)
+  locale.value = lang
   i18n.global.locale = lang
 }
 </script>
