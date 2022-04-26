@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "element-plus": "^2.1.9",
+    "flag-icons": "^6.2.0",
     "vue": "^3.2.32",
     "vue-router": "^4.0.14"
   },
@@ -18,12 +19,14 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "eslint": "^8.14.0",
     "eslint-plugin-vue": "^8.7.1",
+    "pinia": "^2.0.13",
     "prettier": "^2.6.2",
     "sass": "^1.50.0",
     "unplugin-vue-components": "^0.19.2",
     "vite": "^2.9.1",
     "vite-plugin-eslint": "^1.6.0",
-    "vite-ssg": "^0.19.2"
+    "vite-ssg": "^0.19.2",
+    "vite-svg-loader": "^3.3.0"
   },
   "prettier": {
     "semi": false,

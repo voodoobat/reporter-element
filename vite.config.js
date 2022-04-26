@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import components from 'unplugin-vue-components/vite'
 import eslint from 'vite-plugin-eslint'
+import svg from 'vite-svg-loader'
 
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
@@ -11,6 +12,7 @@ export default defineConfig({
   plugins: [
     vue(),
     eslint(),
+    svg(),
     components({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
@@ -29,7 +31,10 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use 'src/scss/element/index.scss' as *;`,
+        additionalData: `
+          @use '~/scss/element/index.scss' as *;
+          @use '~/scss/mixins.scss' as *;
+       `,
       },
     },
   },
