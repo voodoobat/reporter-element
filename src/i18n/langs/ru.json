@@ -6,8 +6,9 @@
   "password_label": "Пароль",
   "restore_title": "Восстановить пароль",
   "restore_button": "Восстановить",
-  "register_title": "Регистрация",
-  "register_button": "Зарегистрироваться",
+  "sign_up_title": "Регистрация",
+  "sign_up_button": "Зарегистрироваться",
   "name_label": "Имя",
-  "restore_link_text": "Забыли?"
+  "restore_link_text": "Забыли?",
+  "profile_button": "Профиль"
 }

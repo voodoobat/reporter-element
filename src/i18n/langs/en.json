@@ -6,8 +6,8 @@
   "password_label": "Password",
   "restore_title": "Restore password",
   "restore_button": "Restore",
-  "register_title": "Sign in",
-  "register_button": "Sign in",
+  "sign_up_title": "Sign in",
+  "sign_up_button": "Sign in",
   "name_label": "Name",
   "restore_link_text": "Forgot?"
 }

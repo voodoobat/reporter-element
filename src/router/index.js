@@ -9,8 +9,8 @@ export default createRouter({
       component: () => import('~/views/LoginView.vue'),
     },
     {
-      path: '/register',
-      name: 'register',
+      path: '/sign-up',
+      name: 'sign-up',
       component: () => import('~/views/RegisterView.vue'),
     },
     {

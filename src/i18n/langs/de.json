@@ -5,8 +5,8 @@
   "password_label": "Passwort",
   "restore_title": "Passwort wiederherstellen",
   "restore_button": "Wiederherstellen",
-  "register_title": "Anmeldung",
-  "register_button": "Anmelden",
+  "sign_up_title": "Anmeldung",
+  "sign_up_button": "Anmelden",
   "name_label": "Name",
   "restore_link_text": "Vergessen?"
 }

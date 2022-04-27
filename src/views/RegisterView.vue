@@ -1,8 +1,8 @@
 <template>
   <root-component type="login">
     <login-form
-      :title="$t('register_title')"
-      :button="$t('register_button')"
+      :title="$t('sign_up_title')"
+      :button="$t('sign_up_button')"
       :model="state"
     >
       <el-form-item>
