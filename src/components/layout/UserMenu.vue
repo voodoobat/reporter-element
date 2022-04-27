@@ -1,7 +1,7 @@
 <template>
   <el-dropdown trigger="click">
     <!-- has user -->
-    <el-avatar v-if="user.email" :size="25" :src="user.image" />
+    <el-avatar v-if="user.id" :size="25" :src="user.image" />
     <!-- no user -->
     <el-avatar v-else :size="25" class="no-user">
       <el-icon :size="15">
@@ -11,14 +11,22 @@
     <template #dropdown>
       <el-dropdown-menu>
         <!-- has user -->
-        <template v-if="!user.email">
+        <template v-if="!user.id">
           <el-dropdown-item>
-            <app-route :to="{ path: '/' }" :underline="false" class="link">
+            <app-route
+              :to="{ name: 'sign-in' }"
+              :underline="false"
+              class="link"
+            >
               {{ $t('log_in_title') }}
             </app-route>
           </el-dropdown-item>
           <el-dropdown-item>
-            <app-route to="sign-up" :underline="false" class="link">
+            <app-route
+              :to="{ name: 'sign-up' }"
+              :underline="false"
+              class="link"
+            >
               {{ $t('sign_up_title') }}
             </app-route>
           </el-dropdown-item>
@@ -50,6 +58,7 @@ const user = useUserStore()
   background: white;
   color: var(--el-text-color-primary);
 }
+
 .link {
   min-width: 100%;
   display: block;

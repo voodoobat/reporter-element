@@ -25,7 +25,7 @@ const props = defineProps({
     type: String,
     default: '',
     validator(v) {
-      return v === '' || ['login'].indexOf(v) !== -1
+      return v === '' || ['user'].indexOf(v) !== -1
     },
   },
 })
