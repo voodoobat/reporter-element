@@ -4,17 +4,25 @@
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item>
-          <router-link :to="{ path: '/' }">
+          <app-route :to="{ path: '/' }">
             {{ $t('log_in_title') }}
-          </router-link>
+          </app-route>
         </el-dropdown-item>
         <el-dropdown-item>
-          <router-link to="sign-up">{{ $t('sign_up_title') }}</router-link>
+          <app-route to="sign-up">
+            {{ $t('sign_up_title') }}
+          </app-route>
         </el-dropdown-item>
         <el-dropdown-item>
-          <a href="">{{ $t('log_out_button') }}</a>
+          <el-link href="/">
+            {{ $t('log_out_button') }}
+          </el-link>
         </el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>
 </template>
+
+<script setup>
+import AppRoute from '~/core/components/AppRoute.vue'
+</script>

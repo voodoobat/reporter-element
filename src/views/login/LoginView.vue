@@ -23,9 +23,9 @@
         />
       </el-form-item>
       <template #note>
-        <router-link to="restore">
+        <app-route type="primary" to="restore">
           {{ $t('restore_link_text') }}
-        </router-link>
+        </app-route>
       </template>
     </login-form>
   </root-component>
@@ -35,6 +35,7 @@
 import { reactive } from 'vue'
 import { User, Edit } from '@element-plus/icons-vue'
 
+import AppRoute from '~/core/components/AppRoute.vue'
 import RootComponent from '~/components/RootComponent.vue'
 import LoginForm from '~/components/LoginForm.vue'
 

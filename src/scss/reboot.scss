@@ -28,6 +28,8 @@ body {
 
 a {
   background: transparent;
+  text-decoration: none;
+  color: inherit;
 
   &:hover,
   &:focus,
