@@ -8,6 +8,7 @@
       <el-form-item>
         <el-input
           v-model="state.email"
+          size="large"
           :prefix-icon="User"
           :placeholder="$t('email_label')"
         />

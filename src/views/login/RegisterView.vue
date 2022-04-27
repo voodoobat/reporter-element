@@ -1,30 +1,27 @@
 <template>
   <root-component type="login">
     <login-form
-      :title="$t('log_in_title')"
-      :button="$t('log_in_button')"
+      :title="$t('sign_up_title')"
+      :button="$t('sign_up_button')"
       :model="state"
     >
       <el-form-item>
         <el-input
-          v-model="state.email"
+          v-model="state.name"
+          size="large"
           :prefix-icon="User"
-          :placeholder="$t('email_label')"
+          :placeholder="$t('name_label')"
         />
       </el-form-item>
       <el-form-item>
         <el-input
-          v-model="state.password"
-          type="password"
-          :prefix-icon="Edit"
-          :placeholder="$t('password_label')"
+          v-model="state.email"
+          :prefix-icon="User"
+          size="large"
+          type="email"
+          :placeholder="$t('email_label')"
         />
       </el-form-item>
-      <template #note>
-        <router-link to="restore">
-          {{ $t('restore_link_text') }}
-        </router-link>
-      </template>
     </login-form>
   </root-component>
 </template>
@@ -37,7 +34,7 @@ import RootComponent from '~/components/RootComponent.vue'
 import LoginForm from '~/components/LoginForm.vue'
 
 const state = reactive({
+  name: '',
   email: '',
-  password: '',
 })
 </script>

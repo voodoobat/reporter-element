@@ -1,12 +1,12 @@
 <template>
-  <el-form class="form" :model="model">
+  <el-form class="form" :model="props.model">
     <el-form-item>
-      <h2>{{ title }}</h2>
+      <h2>{{ props.title }}</h2>
     </el-form-item>
     <slot />
     <el-form-item class="submit">
       <el-button type="primary">
-        {{ button }}
+        {{ props.button }}
       </el-button>
       <slot name="note" />
     </el-form-item>
@@ -15,9 +15,18 @@
 
 <script setup>
 const props = defineProps({
-  title: String,
-  model: Object,
-  button: String,
+  title: {
+    type: String,
+    default: '',
+  },
+  model: {
+    type: Object,
+    default: null,
+  },
+  button: {
+    type: String,
+    default: '',
+  },
 })
 </script>
 
