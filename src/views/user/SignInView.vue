@@ -51,15 +51,14 @@ const state = reactive({
 })
 
 const onsubmit = () => {
+  // TODO: use ElMessage if success
   if (state.password) {
     user.id = 1
-    user.name = 'Elon Musk'
+    user.name = 'John Doe'
     user.email = state.email
+    user.image = '/mock/avatar.jpg'
     state.email = ''
     state.password = ''
-  }
-
-  if (user.id) {
     push({ name: 'home' })
   }
 }

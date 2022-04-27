@@ -10,5 +10,6 @@
   "sign_up_button": "Зарегистрироваться",
   "name_label": "Имя",
   "restore_link_text": "Забыли?",
-  "profile_button": "Профиль"
+  "profile_button": "Профиль",
+  "log_in_message_success": "Вы зашли как"
 }

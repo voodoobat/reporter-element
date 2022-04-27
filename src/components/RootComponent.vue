@@ -2,23 +2,26 @@
   <el-container class="app-root" :class="props.type">
     <el-header class="app-head">
       <el-row class="row">
-        <el-col :md="20" class="column"></el-col>
-        <el-col :md="4" class="column user-column">
+        <el-col :span="24" class="column user-column">
           <user-menu />
           <lang-switcher />
         </el-col>
       </el-row>
     </el-header>
-    <el-main class="app-main">
-      <slot />
-    </el-main>
-    <el-footer class="app-foot" />
+    <div class="app-main-box">
+      <!--      <nav-menu v-if="type !== 'login'" class="app-nav" />-->
+      <main-nav v-if="props.type !== 'login'" />
+      <el-main class="app-main">
+        <slot />
+      </el-main>
+    </div>
   </el-container>
 </template>
 
 <script setup>
 import LangSwitcher from '~/components/layout/LangSwitcher.vue'
 import UserMenu from '~/components/layout/UserMenu.vue'
+import MainNav from '~/components/layout/MainNav.vue'
 
 const props = defineProps({
   type: {
@@ -32,11 +35,25 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+$layout-border: 1px solid var(--el-color-info-light-7);
+
 .app-root {
   min-height: 100%;
 }
 
+.app-main-box {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 10;
+}
+
+.app-nav {
+  border-right: $layout-border;
+}
+
 .app-main {
+  flex-grow: 10;
+
   .app-root.login & {
     display: flex;
     flex-direction: column;
@@ -44,6 +61,14 @@ const props = defineProps({
     align-items: center;
     min-height: 100%;
   }
+}
+
+.app-head {
+  border-bottom: $layout-border;
+}
+
+.app-foot {
+  border-top: $layout-border;
 }
 
 .row {
@@ -56,9 +81,12 @@ const props = defineProps({
 }
 
 .user-column {
-  justify-content: flex-end;
-  > * + * {
-    margin-left: 0.5em;
+  justify-content: space-between;
+  .app-root.login & {
+    justify-content: flex-end;
+    > * + * {
+      margin-left: 0.5em;
+    }
   }
 }
 </style>

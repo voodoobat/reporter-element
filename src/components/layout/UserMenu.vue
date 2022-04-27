@@ -1,44 +1,28 @@
 <template>
-  <el-dropdown trigger="click">
-    <!-- has user -->
-    <el-avatar v-if="user.id" :size="25" :src="user.image" />
-    <!-- no user -->
-    <el-avatar v-else :size="25" class="no-user">
+  <!-- user -->
+  <div v-if="user.id" class="user">
+    <el-avatar :size="25" :src="user.image" />
+    <h4 class="user-name">{{ user.name }}</h4>
+  </div>
+  <!-- login -->
+  <el-dropdown v-else trigger="click">
+    <el-avatar :size="25" class="no-user">
       <el-icon :size="15">
         <menu-icon />
       </el-icon>
     </el-avatar>
     <template #dropdown>
       <el-dropdown-menu>
-        <!-- has user -->
-        <template v-if="!user.id">
-          <el-dropdown-item>
-            <app-route
-              :to="{ name: 'sign-in' }"
-              :underline="false"
-              class="link"
-            >
-              {{ $t('log_in_title') }}
-            </app-route>
-          </el-dropdown-item>
-          <el-dropdown-item>
-            <app-route
-              :to="{ name: 'sign-up' }"
-              :underline="false"
-              class="link"
-            >
-              {{ $t('sign_up_title') }}
-            </app-route>
-          </el-dropdown-item>
-        </template>
-        <!-- no user -->
-        <template v-else>
-          <el-dropdown-item>
-            <el-link href="/" :underline="false" class="link">
-              {{ $t('log_out_button') }}
-            </el-link>
-          </el-dropdown-item>
-        </template>
+        <el-dropdown-item>
+          <app-route :to="{ name: 'sign-in' }" :underline="false" class="link">
+            {{ $t('log_in_title') }}
+          </app-route>
+        </el-dropdown-item>
+        <el-dropdown-item>
+          <app-route :to="{ name: 'sign-up' }" :underline="false" class="link">
+            {{ $t('sign_up_title') }}
+          </app-route>
+        </el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>
@@ -62,5 +46,13 @@ const user = useUserStore()
 .link {
   min-width: 100%;
   display: block;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  &-name {
+    margin-left: 0.5em;
+  }
 }
 </style>
