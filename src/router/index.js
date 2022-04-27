@@ -5,7 +5,7 @@ export default createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'sign-in',
       component: () => import('~/views/LoginView.vue'),
     },
     {
