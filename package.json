@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "generate": "vite-ssg build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fix": "prettier --write src/**/*.vue"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^1.1.4",
