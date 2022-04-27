@@ -4,8 +4,8 @@
       <el-row class="row">
         <el-col :md="20" class="column"></el-col>
         <el-col :md="4" class="column user-column">
-          <lang-switcher />
           <user-menu />
+          <lang-switcher />
         </el-col>
       </el-row>
     </el-header>

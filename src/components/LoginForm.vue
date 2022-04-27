@@ -5,7 +5,7 @@
     </el-form-item>
     <slot />
     <el-form-item class="submit">
-      <el-button type="primary">
+      <el-button type="primary" @click="onsubmit">
         {{ props.button }}
       </el-button>
       <slot name="note" />
@@ -28,6 +28,8 @@ const props = defineProps({
     default: '',
   },
 })
+const emit = defineEmits(['submit'])
+const onsubmit = () => emit('submit')
 </script>
 
 <style lang="scss" scoped>

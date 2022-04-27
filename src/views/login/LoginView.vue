@@ -1,6 +1,7 @@
 <template>
   <root-component type="login">
     <login-form
+      @submit="onsubmit"
       :title="$t('log_in_title')"
       :button="$t('log_in_button')"
       :model="state"
@@ -34,13 +35,21 @@
 <script setup>
 import { reactive } from 'vue'
 import { User, Edit } from '@element-plus/icons-vue'
-
 import AppRoute from '~/core/components/AppRoute.vue'
 import RootComponent from '~/components/RootComponent.vue'
 import LoginForm from '~/components/LoginForm.vue'
+import { useUserStore } from '~/core/store/user'
 
+const user = useUserStore()
 const state = reactive({
   email: '',
   password: '',
 })
+
+const onsubmit = () => {
+  if (state.password) {
+    user.name = 'Elon Musk'
+    user.email = state.email
+  }
+}
 </script>
