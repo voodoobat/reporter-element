@@ -25,5 +25,15 @@ export default createRouter({
       name: 'restore',
       component: () => import('~/views/user/RestoreView.vue'),
     },
+    {
+      path: '/posts',
+      name: 'posts-list',
+      component: () => import('~/views/user/HomeView.vue'),
+    },
+    {
+      path: '/posts/new',
+      name: 'posts-new',
+      component: () => import('~/views/user/HomeView.vue'),
+    },
   ],
 })

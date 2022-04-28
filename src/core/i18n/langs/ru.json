@@ -11,5 +11,11 @@
   "name_label": "Имя",
   "restore_link_text": "Забыли?",
   "profile_button": "Профиль",
-  "log_in_message_success": "Вы зашли как"
+  "log_in_message_success": "Вы зашли как",
+  "collapse": "Свернуть",
+  "posts": "Статьи",
+  "create": "Создать новую",
+  "my_posts": "Мои статьи",
+  "country": "Страна",
+  "city": "Город"
 }

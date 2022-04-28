@@ -9,7 +9,6 @@
       </el-row>
     </el-header>
     <div class="app-main-box">
-      <!--      <nav-menu v-if="type !== 'login'" class="app-nav" />-->
       <main-nav v-if="props.type !== 'login'" />
       <el-main class="app-main">
         <slot />

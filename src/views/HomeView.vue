@@ -50,6 +50,7 @@ import { useRouter } from 'vue-router'
 
 const { push } = useRouter()
 const user = useUserStore()
+
 if (!user.id) {
   push({ name: 'sign-in' })
 }

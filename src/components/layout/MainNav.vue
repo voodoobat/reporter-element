@@ -1,31 +1,34 @@
 <template>
-  <el-menu :collapse="!expanded" class="menu">
-    <el-menu-item class="expand" @click="expanded = !expanded">
+  <el-menu :collapse="!expanded" class="menu" :router="true">
+    <li class="el-menu-item expand" @click.prevent="expanded = !expanded">
       <el-icon>
         <circle-close v-if="expanded" />
         <circle-plus v-else />
       </el-icon>
-      <span>Свернуть</span>
-    </el-menu-item>
+      <span>{{ $t('collapse') }}</span>
+    </li>
     <el-sub-menu :index="2">
       <template #title>
         <el-icon>
           <document />
         </el-icon>
-        <span>Статьи</span>
+        <span>{{ $t('posts') }}</span>
       </template>
-      <el-menu-item-group class="posts">
-        <el-menu-item :index="20">
+      <el-menu-item-group class="group">
+        <template #title>
+          <span>{{ $t('posts') }}</span>
+        </template>
+        <el-menu-item :route="{ name: 'posts-new' }">
           <el-icon>
             <edit-pen />
           </el-icon>
-          <span>Создать новую</span>
+          <span>{{ $t('create') }}</span>
         </el-menu-item>
-        <el-menu-item :index="21">
+        <el-menu-item :route="{ name: 'posts-list' }">
           <el-icon>
             <edit />
           </el-icon>
-          <span>Мои статьи</span>
+          <span>{{ $t('my_posts') }}</span>
         </el-menu-item>
       </el-menu-item-group>
     </el-sub-menu>
@@ -43,6 +46,7 @@ import {
 } from '@element-plus/icons-vue'
 
 import { usePostsStore } from '~/core/store/posts'
+import router from '~/core/router'
 
 const expanded = ref(true)
 const posts = reactive(usePostsStore())
@@ -52,18 +56,17 @@ const posts = reactive(usePostsStore())
 .menu {
   &:not(.el-menu--collapse) {
     width: 20em;
+    .group {
+      &::v-deep(.el-menu-item-group__title) {
+        display: none;
+      }
+    }
   }
 }
 
 .expand {
   color: var(--el-text-color-primary) !important;
   &::v-deep(.el-sub-menu__icon-arrow) {
-    display: none;
-  }
-}
-
-.posts {
-  &::v-deep(.el-menu-item-group__title) {
     display: none;
   }
 }
