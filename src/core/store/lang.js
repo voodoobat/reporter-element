@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
-export const useConfStore = defineStore('media', {
+export const useLangStore = defineStore('lang', {
   state: () => ({
-    mq: '',
+    lang: '',
   }),
 })

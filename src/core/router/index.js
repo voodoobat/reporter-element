@@ -28,12 +28,12 @@ export default createRouter({
     {
       path: '/posts',
       name: 'posts-list',
-      component: () => import('~/views/user/HomeView.vue'),
+      component: () => import('~/views/HomeView.vue'),
     },
     {
       path: '/posts/new',
       name: 'posts-new',
-      component: () => import('~/views/user/HomeView.vue'),
+      component: () => import('~/views/HomeView.vue'),
     },
   ],
 })

@@ -6,24 +6,14 @@
 
 <script setup>
 // TODO: setup locale
-import { useConfStore } from '~/core/store/conf'
+import { useMediaStore } from '~/core/store/media'
+import { useLangStore } from '~/core/store/lang'
+import { useGlobalMedia } from '~/core/lib/useGlobalMedia'
 
-const conf = useConfStore()
+const { lang } = useLangStore()
+const media = useMediaStore()
 
-const MQ_SM = 768
-const MQ_MD = 992
-const MQ_LG = 1200
-
-const onResize = () => {
-  const w = window.innerWidth || document.documentElement.clientWidth
-  if (w <= MQ_SM) {
-    conf.mq = 'SM'
-  } else if (w > MQ_SM && w < MQ_MD) {
-    conf.mq = 'MD'
-  } else if (w >= MQ_LG) {
-    conf.mq = 'LG'
-  }
-}
-window.addEventListener('resize', onResize)
-onResize()
+// set media current media
+window.addEventListener('resize', () => useGlobalMedia(media))
+useGlobalMedia(media)
 </script>
