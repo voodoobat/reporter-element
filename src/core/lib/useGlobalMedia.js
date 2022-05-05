@@ -11,7 +11,7 @@ export const useGlobalMedia = (store) => {
     store.mq = 'SM'
   }
 
-  if (is(`(min-width: ${MQ_SM}px) and (max-width: ${MQ_MD - 1}px)`)) {
+  if (is(`(min-width: ${MQ_SM}px) and (max-width: ${MQ_MD - 0.2}px)`)) {
     store.mq = 'MD'
   }
 
