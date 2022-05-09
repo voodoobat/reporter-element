@@ -1,0 +1,16 @@
+.form {
+  min-width: 90%;
+  @include media($MQ_SM) {
+    min-width: 25em;
+  }
+}
+
+.submit {
+  &::v-deep(.el-form-item__content) {
+    display: flex;
+    justify-content: space-between;
+  }
+  &::v-deep(a) {
+    color: var(--el-link-text-color);
+  }
+}

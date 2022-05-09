@@ -3,6 +3,8 @@
   "log_in_button": "Войти",
   "log_out_button": "Выйти",
   "email_label": "E-mail",
+  "email_error_msg": "Введите корректный email",
+  "required_error_msg": "Это обязательное поле",
   "password_label": "Пароль",
   "restore_title": "Восстановить пароль",
   "restore_button": "Восстановить",

@@ -22,6 +22,7 @@
 <script setup>
 import { ref } from 'vue'
 import { ArrowDown } from '@element-plus/icons-vue'
+
 import i18n, { ui } from '~/core/i18n'
 
 const locale = ref(i18n.global.locale)
