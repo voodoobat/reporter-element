@@ -1,6 +1,8 @@
-import { getGlobalCssVar } from '~/core/lib/util'
+import { getGlobalCssVar } from '~/core/lib/getGlobalCssVar'
+import { useMediaStore } from '~/core/store/media'
 
-export const useGlobalMedia = (store) => {
+export const useGlobalMedia = () => {
+  const store = useMediaStore()
   const is = (str) => matchMedia(str).matches
 
   const MQ_SM = getGlobalCssVar('MQ_SM', Number)
