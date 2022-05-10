@@ -43,8 +43,8 @@ const model = reactive({
   email: '',
 })
 const onsubmit = async (form) => {
-  await form.validate((isOk) => {
-    if (isOk) {
+  await form.validate((isValid) => {
+    if (isValid) {
       console.log('is ok')
     } else {
       console.log('is`nt ok')
