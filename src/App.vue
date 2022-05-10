@@ -1,9 +1,7 @@
 <template>
-  <div :id="mq">
-    <el-config-provider :locale="locale">
-      <router-view />
-    </el-config-provider>
-  </div>
+  <el-config-provider :locale="locale">
+    <router-view />
+  </el-config-provider>
 </template>
 
 <script setup>
