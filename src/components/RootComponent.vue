@@ -3,7 +3,6 @@
     <el-header class="app-head">
       <el-row class="row">
         <el-col :span="24" class="column user-column">
-          <user-menu />
           <lang-switcher />
         </el-col>
       </el-row>
@@ -19,7 +18,6 @@
 
 <script setup>
 import LangSwitcher from '~/components/layout/LangSwitcher.vue'
-import UserMenu from '~/components/layout/UserMenu.vue'
 import MainNav from '~/components/layout/MainNav.vue'
 
 const props = defineProps({

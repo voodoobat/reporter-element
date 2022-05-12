@@ -1,5 +1,5 @@
 <template>
-  <el-menu :collapse="!expanded" class="menu" :router="true">
+  <el-menu :collapse="!media.MQ_SM" class="menu" :router="true">
     <li class="el-menu-item expand" @click.prevent="expanded = !expanded">
       <el-icon>
         <circle-close v-if="expanded" />
@@ -37,6 +37,7 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
+import { storeToRefs } from 'pinia'
 import {
   Document,
   EditPen,
@@ -45,10 +46,10 @@ import {
   CircleClose,
 } from '@element-plus/icons-vue'
 
+import { useMediaStore } from '~/core/store/media'
 import { usePostsStore } from '~/core/store/posts'
-import router from '~/core/router'
 
-const expanded = ref(true)
+const media = storeToRefs(useMediaStore())
 const posts = reactive(usePostsStore())
 </script>
 

@@ -1,14 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomeView from '~/views/HomeView.vue'
-
 export default createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: () => import('~/views/RootView.vue'),
     },
     {
       path: '/user/sign-in',
@@ -28,12 +26,12 @@ export default createRouter({
     {
       path: '/posts',
       name: 'posts-list',
-      component: () => import('~/views/HomeView.vue'),
+      component: () => import('~/views/posts/ListsView.vue'),
     },
     {
       path: '/posts/new',
       name: 'posts-new',
-      component: () => import('~/views/HomeView.vue'),
+      component: () => import('~/views/RootView.vue'),
     },
   ],
 })
