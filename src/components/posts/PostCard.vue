@@ -6,16 +6,18 @@
       </div>
       <ul class="date">
         <li>
-          <span>Создан:</span> <time>{{ props.post.created }}</time>
+          <span>{{ $t('created') }}: </span>
+          <time>{{ props.post.created }}</time>
         </li>
         <li>
-          <span>Последнее изменение:</span> <time>{{ props.post.edited }}</time>
+          <span>{{ $t('edited') }}: </span>
+          <time>{{ props.post.edited }}</time>
         </li>
       </ul>
     </div>
     <div class="actions">
-      <el-button type="primary" :icon="Edit" circle />
-      <el-button type="danger" :icon="Delete" circle />
+      <el-button :icon="Edit" circle />
+      <el-button :icon="Delete" circle />
     </div>
   </div>
 </template>

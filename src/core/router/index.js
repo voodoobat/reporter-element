@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useUserStore } from '~/core/store/user'
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -11,16 +12,19 @@ export default createRouter({
     {
       path: '/user/sign-in',
       name: 'sign-in',
+      meta: { guest: true },
       component: () => import('~/views/user/SignInView.vue'),
     },
     {
       path: '/user/sign-up',
       name: 'sign-up',
+      meta: { guest: true },
       component: () => import('~/views/user/SignUpView.vue'),
     },
     {
       path: '/user/restore',
       name: 'restore',
+      meta: { guest: true },
       component: () => import('~/views/user/RestoreView.vue'),
     },
     {
@@ -35,3 +39,18 @@ export default createRouter({
     },
   ],
 })
+
+router.beforeEach((to, from, next) => {
+  const user = useUserStore()
+  const { guest } = to.meta
+
+  if (!guest && !user.id) {
+    return next({
+      name: 'sign-in',
+    })
+  }
+
+  return next()
+})
+
+export default router
