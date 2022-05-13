@@ -3,13 +3,15 @@
     <el-form
       ref="formRef"
       class="form"
-      :model="model"
       size="large"
+      :model="model"
       :rules="{
-        password: [{ required: true, message: $t('required_error_msg') }],
+        password: [
+          { required: true, message: $t('required_error_msg'), trigger },
+        ],
         email: [
-          { required: true, message: $t('email_error_msg') },
-          { type: 'email', message: $t('email_error_msg') },
+          { required: true, message: $t('email_error_msg'), trigger },
+          { type: 'email', message: $t('email_error_msg'), trigger },
         ],
       }"
     >
@@ -55,6 +57,8 @@ import { useUserStore } from '~/core/store/user'
 const formRef = ref()
 const user = useUserStore()
 const { push } = useRouter()
+
+const trigger = 'blur'
 const model = reactive({
   email: '',
   password: '',
@@ -69,7 +73,7 @@ const onsubmit = async (form) => {
       user.image = '/mock/avatar.jpg'
       model.email = ''
       model.password = ''
-      push({ name: 'home' })
+      push({ name: 'posts-list' })
     }
   })
 }

@@ -16,8 +16,12 @@
       </ul>
     </div>
     <div class="actions">
-      <el-button :icon="Edit" circle />
-      <el-button :icon="Delete" circle />
+      <el-tooltip :content="$t('edit_tooltip')">
+        <el-button :icon="Edit" circle />
+      </el-tooltip>
+      <el-tooltip :content="$t('delete_tooltip')">
+        <el-button :icon="Delete" circle />
+      </el-tooltip>
     </div>
   </div>
 </template>

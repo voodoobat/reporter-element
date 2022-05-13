@@ -1,5 +1,5 @@
 <template>
-  <el-menu :collapse="!media.MQ_SM" class="menu" :router="true">
+  <el-menu :collapse="!expanded" class="menu" :router="true">
     <li class="el-menu-item expand" @click.prevent="expanded = !expanded">
       <el-icon>
         <circle-close v-if="expanded" />
@@ -18,11 +18,11 @@
         <template #title>
           <span>{{ $t('posts') }}</span>
         </template>
-        <el-menu-item :route="{ name: 'posts-new' }">
+        <el-menu-item>
           <el-icon>
             <edit-pen />
           </el-icon>
-          <span>{{ $t('create') }}</span>
+          <router-link :to="{ name: 'home' }">{{ $t('create') }}</router-link>
         </el-menu-item>
         <el-menu-item :route="{ name: 'posts-list' }">
           <el-icon>
@@ -36,8 +36,7 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
-import { storeToRefs } from 'pinia'
+import { ref } from 'vue'
 import {
   Document,
   EditPen,
@@ -47,10 +46,11 @@ import {
 } from '@element-plus/icons-vue'
 
 import { useMediaStore } from '~/core/store/media'
-import { usePostsStore } from '~/core/store/posts'
 
-const media = storeToRefs(useMediaStore())
-const posts = reactive(usePostsStore())
+import router from '~/core/router'
+
+const media = useMediaStore()
+const expanded = ref(!media.MQ_SM.value)
 </script>
 
 <style lang="scss" scoped>
