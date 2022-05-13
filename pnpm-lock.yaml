@@ -7,6 +7,7 @@ specifiers:
   element-plus: ^2.1.9
   eslint: ^8.14.0
   eslint-plugin-vue: ^8.7.1
+  fecha: ^4.2.3
   flag-icons: ^6.2.0
   lorem-ipsum: ^2.0.4
   pinia: ^2.0.13
@@ -24,6 +25,7 @@ specifiers:
 dependencies:
   '@element-plus/icons-vue': 1.1.4_vue@3.2.33
   element-plus: 2.1.11_vue@3.2.33
+  fecha: 4.2.3
   flag-icons: 6.3.0
   vue: 3.2.33
   vue-i18n: 9.1.10_vue@3.2.33
@@ -1175,6 +1177,10 @@ packages:
     dependencies:
       reusify: 1.0.4
     dev: true
+
+  /fecha/4.2.3:
+    resolution: {integrity: sha512-OP2IUU6HeYKJi3i0z4A19kHMQoLVs4Hc+DPqqxI2h/DPZHTm/vjsfC6P0b4jCMy14XizLBqvndQ+UilD7707Jw==}
+    dev: false
 
   /file-entry-cache/6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}

@@ -1,7 +1,11 @@
 <template>
   <root-component>
     <page-content :title="$t('my_posts')">
-      <post-card v-for="post in posts" :key="post.id" :post="post" />
+      <post-card
+        v-for="post in posts"
+        :key="post.value.id"
+        :post="post.value"
+      />
     </page-content>
   </root-component>
 </template>

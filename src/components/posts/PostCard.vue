@@ -11,7 +11,7 @@
         </li>
         <li>
           <span>{{ $t('edited') }}: </span>
-          <time>{{ props.post.edited }}</time>
+          <time>{{ props.post.updated }}</time>
         </li>
       </ul>
     </div>
@@ -35,8 +35,6 @@ const props = defineProps({
     required: true,
   },
 })
-
-console.log(props.post.title)
 </script>
 
 <style lang="scss" scoped>
