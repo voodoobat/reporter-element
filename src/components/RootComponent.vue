@@ -2,7 +2,7 @@
   <el-container class="app-root" :class="props.type">
     <el-header class="app-head">
       <el-row class="row">
-        <el-col :span="24" class="column user-column">
+        <el-col :span="24" class="column">
           <user-menu />
           <lang-switcher />
         </el-col>
@@ -19,8 +19,8 @@
 
 <script setup>
 import LangSwitcher from '~/components/layout/LangSwitcher.vue'
-import UserMenu from '~/components/layout/UserMenu.vue'
 import MainNav from '~/components/layout/MainNav.vue'
+import UserMenu from '~/components/layout/UserMenu.vue'
 
 const props = defineProps({
   type: {
@@ -77,9 +77,6 @@ $layout-border: 1px solid var(--el-color-info-light-7);
 .column {
   display: flex;
   align-items: center;
-}
-
-.user-column {
   justify-content: space-between;
   .app-root.login & {
     justify-content: flex-end;

@@ -1,4 +1,5 @@
 import { getGlobalCssVar } from '~/core/lib/getGlobalCssVar'
+
 import { useMediaStore } from '~/core/store/media'
 
 export const useGlobalMedia = () => {

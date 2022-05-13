@@ -14,5 +14,9 @@ export const usePostsStore = defineStore('posts', {
       id: 3,
       title: 'Заголовок статьи 3',
     },
+    {
+      id: 4,
+      title: 'Заголовок статьи 4',
+    },
   ],
 })

@@ -23,11 +23,13 @@
 import { ref } from 'vue'
 import { ArrowDown } from '@element-plus/icons-vue'
 
-import i18n, { ui } from '~/core/i18n'
+import i18n from '~/core/i18n'
+import ui from '~/core/i18n/ui'
+import { setLocalState } from '~/core/lib/setLocalState'
 
 const locale = ref(i18n.global.locale)
 const setLang = (lang) => {
-  localStorage.setItem('ui_lang', lang)
+  setLocalState({ locale: lang })
   locale.value = lang
   i18n.global.locale = lang
 }

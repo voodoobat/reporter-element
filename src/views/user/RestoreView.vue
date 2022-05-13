@@ -3,12 +3,12 @@
     <el-form
       ref="formRef"
       class="form"
-      :model="model"
       size="large"
+      :model="model"
       :rules="{
         email: [
-          { required: true, message: $t('email_error_msg') },
-          { type: 'email', message: $t('email_error_msg') },
+          { required: true, message: $t('email_error_msg'), trigger },
+          { type: 'email', message: $t('email_error_msg'), trigger },
         ],
       }"
     >
@@ -39,6 +39,8 @@ import { User } from '@element-plus/icons-vue'
 import RootComponent from '~/components/RootComponent.vue'
 
 const formRef = ref()
+
+const trigger = 'blur'
 const model = reactive({
   email: '',
 })
