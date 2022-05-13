@@ -35,6 +35,8 @@ const props = defineProps({
     required: true,
   },
 })
+
+console.log(props.post.title)
 </script>
 
 <style lang="scss" scoped>

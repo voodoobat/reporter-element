@@ -1,22 +1,17 @@
 <template>
   <root-component>
     <page-content :title="$t('my_posts')">
-      <post-card :post="post" class="post" />
-      <post-card :post="post" class="post" />
-      <post-card :post="post" class="post" />
+      <post-card v-for="post in posts" :key="post.id" :post="post" />
     </page-content>
   </root-component>
 </template>
 
 <script setup>
+import { storeToRefs } from 'pinia'
 import PostCard from '~/components/posts/PostCard.vue'
+import { usePostsStore } from '~/core/store/posts'
 
-const post = {
-  id: 1,
-  title: 'Заголовок поста',
-  created: '03.07.2022',
-  edited: '03.07.2022',
-}
+const posts = storeToRefs(usePostsStore())
 </script>
 
 <style lang="scss" scoped>
