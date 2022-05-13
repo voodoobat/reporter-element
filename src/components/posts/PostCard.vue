@@ -11,7 +11,7 @@
         </li>
         <li>
           <span>{{ $t('edited') }}: </span>
-          <time>{{ props.post.edited }}</time>
+          <time>{{ props.post.updated }}</time>
         </li>
       </ul>
     </div>
