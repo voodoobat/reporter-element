@@ -1,6 +1,6 @@
 <template>
   <el-menu :collapse="!expanded" class="menu" :router="true">
-    <li class="el-menu-item expand" @click.prevent="expanded = !expanded">
+    <li class="el-menu-item expand" @click.prevent="toggle">
       <el-icon>
         <circle-close v-if="expanded" />
         <circle-plus v-else />
@@ -18,17 +18,17 @@
         <template #title>
           <span>{{ $t('posts') }}</span>
         </template>
-        <el-menu-item>
-          <el-icon>
-            <edit-pen />
-          </el-icon>
-          <router-link :to="{ name: 'home' }">{{ $t('create') }}</router-link>
-        </el-menu-item>
         <el-menu-item :route="{ name: 'posts-list' }">
           <el-icon>
             <edit />
           </el-icon>
           <span>{{ $t('my_posts') }}</span>
+        </el-menu-item>
+        <el-menu-item :route="{ name: 'posts-create' }">
+          <el-icon>
+            <edit-pen />
+          </el-icon>
+          <span>{{ $t('create') }}</span>
         </el-menu-item>
       </el-menu-item-group>
     </el-sub-menu>
@@ -46,11 +46,15 @@ import {
 } from '@element-plus/icons-vue'
 
 import { useMediaStore } from '~/core/store/media'
-
-import router from '~/core/router'
+import { getLocalState } from '~/core/lib/getLocalState'
+import { setLocalState } from '~/core/lib/setLocalState'
 
 const media = useMediaStore()
-const expanded = ref(!media.MQ_SM.value)
+const expanded = ref(getLocalState()?.mainNavExpanded)
+const toggle = () => {
+  expanded.value = !expanded.value
+  setLocalState({ mainNavExpanded: expanded.value })
+}
 </script>
 
 <style lang="scss" scoped>

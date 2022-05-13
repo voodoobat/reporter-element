@@ -7,20 +7,26 @@ export default [
   {
     path: '/user/sign-in',
     name: 'sign-in',
+    meta: {
+      guest: true,
+    },
     component: () => import('~/views/user/SignInView.vue'),
-    meta: { guest: true },
   },
   {
     path: '/user/sign-up',
     name: 'sign-up',
+    meta: {
+      guest: true,
+    },
     component: () => import('~/views/user/SignUpView.vue'),
-    meta: { guest: true },
   },
   {
     path: '/user/restore',
     name: 'restore',
+    meta: {
+      guest: true,
+    },
     component: () => import('~/views/user/RestoreView.vue'),
-    meta: { guest: true },
   },
   {
     path: '/posts',
@@ -29,7 +35,7 @@ export default [
   },
   {
     path: '/posts/new',
-    name: 'posts-new',
-    component: () => import('~/views/RootView.vue'),
+    name: 'posts-create',
+    component: () => import('~/views/posts/EditView.vue'),
   },
 ]

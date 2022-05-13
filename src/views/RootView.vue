@@ -5,14 +5,8 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
 import RootComponent from '~/components/RootComponent.vue'
 import PageContent from '~/components/PageContent.vue'
-
-const { push } = useRouter()
-push({
-  name: 'posts-list',
-})
 </script>
 
 <style lang="scss">
