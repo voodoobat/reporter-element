@@ -8,6 +8,7 @@
 
 <script setup>
 import { reactive } from 'vue'
+import PageContent from '~/components/PageContent.vue'
 import PostCard from '~/components/posts/PostCard.vue'
 import { usePostsStore } from '~/core/store/posts'
 
