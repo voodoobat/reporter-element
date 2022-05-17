@@ -6,7 +6,7 @@
           <el-input v-model="post.title" />
         </el-form-item>
         <el-form-item>
-
+          <!---->
         </el-form-item>
       </el-form>
     </page-content>
