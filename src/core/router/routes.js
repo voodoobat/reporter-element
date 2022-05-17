@@ -1,3 +1,5 @@
+import { usePostsStore } from '~/core/store/posts'
+
 export default [
   {
     path: '/',
@@ -32,6 +34,19 @@ export default [
     path: '/posts',
     name: 'posts-list',
     component: () => import('~/views/posts/ListsView.vue'),
+    beforeEnter: () => {
+      const store = usePostsStore()
+      store.fetchPostList()
+    },
+  },
+  {
+    path: '/posts/:id/edit',
+    name: 'posts-edit',
+    component: () => import('~/views/posts/EditView.vue'),
+    beforeEnter: ({ params }) => {
+      const store = usePostsStore()
+      store.fetchPostById(params.id)
+    },
   },
   {
     path: '/posts/new',
