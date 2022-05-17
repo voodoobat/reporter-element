@@ -17,10 +17,17 @@
     </div>
     <div class="actions">
       <el-tooltip :content="$t('edit_tooltip')">
-        <el-button :icon="Edit" circle />
+        <router-link
+          :to="{
+            name: 'posts-edit',
+            params: { id: props.post.id },
+          }"
+        >
+          <el-button class="button" :icon="Edit" circle />
+        </router-link>
       </el-tooltip>
       <el-tooltip :content="$t('delete_tooltip')">
-        <el-button :icon="Delete" circle />
+        <el-button class="button" :icon="Delete" circle />
       </el-tooltip>
     </div>
   </div>
@@ -63,6 +70,10 @@ const props = defineProps({
 }
 
 .actions {
+  .button {
+    margin-left: 0.5em;
+  }
+
   @include media($MQ_SM, max) {
     margin-top: 1em;
   }

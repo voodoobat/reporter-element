@@ -13,6 +13,7 @@ specifiers:
   pinia: ^2.0.13
   prettier: ^2.6.2
   sass: ^1.50.0
+  uid: ^2.0.0
   unplugin-vue-components: ^0.19.2
   vite: ^2.9.1
   vite-plugin-eslint: ^1.6.0
@@ -27,6 +28,7 @@ dependencies:
   element-plus: 2.1.11_vue@3.2.33
   fecha: 4.2.3
   flag-icons: 6.3.0
+  uid: 2.0.0
   vue: 3.2.33
   vue-i18n: 9.1.10_vue@3.2.33
   vue-router: 4.0.15_vue@3.2.33
@@ -179,6 +181,11 @@ packages:
       '@intlify/message-resolver': 9.1.10
       '@intlify/runtime': 9.1.10
       '@intlify/shared': 9.1.10
+    dev: false
+
+  /@lukeed/csprng/1.0.1:
+    resolution: {integrity: sha512-uSvJdwQU5nK+Vdf6zxcWAY2A8r7uqe+gePwLWzJ+fsQehq18pc0I2hJKwypZ2aLM90+Er9u1xn4iLJPZ+xlL4g==}
+    engines: {node: '>=8'}
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -2033,6 +2040,13 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
     dev: true
+
+  /uid/2.0.0:
+    resolution: {integrity: sha512-hFw+zKBA1szYdbZWj6FjTxZzJnKNf+wTDcsxlJaXS64MCy9LQEmJUVieGYHCKek/WRyFIcs0cEXtGIQmfvHe2A==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@lukeed/csprng': 1.0.1
+    dev: false
 
   /universalify/0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}

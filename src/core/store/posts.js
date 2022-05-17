@@ -1,6 +1,17 @@
 import { defineStore } from 'pinia'
-import { generate } from '~/mock/posts'
+import { posts } from '~/mock/posts'
 
 export const usePostsStore = defineStore('posts', {
-  state: () => generate(20),
+  state: () => ({
+    list: [],
+    post: null,
+  }),
+  actions: {
+    fetchPostList() {
+      this.list = posts
+    },
+    fetchPostById(postId) {
+      this.post = posts.filter(({ id }) => postId === id)[0]
+    },
+  },
 })

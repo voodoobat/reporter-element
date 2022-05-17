@@ -21,7 +21,9 @@
   "country": "Страна",
   "city": "Город",
   "created": "Создано",
+  "delete_tooltip": "Удалить",
   "edited": "Последнее изменение",
   "edit_tooltip": "Редактировать",
-  "delete_tooltip": "Удалить"
+  "edit_label": "Редактирование",
+  "post_title": "Заголовок"
 }
