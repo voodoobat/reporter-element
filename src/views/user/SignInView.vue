@@ -68,9 +68,6 @@ const onsubmit = async (form) => {
   await form.validate((isValid) => {
     if (isValid) {
       user.id = 1
-      user.name = 'John Doe'
-      user.email = model.email
-      user.image = '/mock/avatar.jpg'
       model.email = ''
       model.password = ''
       push({ name: 'posts-list' })

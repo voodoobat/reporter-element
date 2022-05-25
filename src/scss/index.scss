@@ -10,12 +10,13 @@
   --MQ_SM: #{remove-unit($MQ_SM)};
   --MQ_MD: #{remove-unit($MQ_MD)};
   --MQ_LG: #{remove-unit($MQ_LG)};
+  --MQ_EDITOR_SM: #{remove-unit($MQ_EDITOR_SM)};
 }
 
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto', sans-serif;
+  font-family: $FONT_FAMILY;
 }
 
 #app {
