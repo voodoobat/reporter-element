@@ -28,6 +28,11 @@ export default defineConfig({
       '~': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  esbuild: {
+    jsx: 'transform',
+    jsxFactory: 'm',
+    jsxFragment: '"["',
+  },
   css: {
     preprocessorOptions: {
       scss: {
