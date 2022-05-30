@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 
-import CardView from './CardView.vue'
+import CardUI from './CardUI.vue'
 import icon from './svg/card.svg?raw'
 
 export default class Card {
@@ -21,7 +21,7 @@ export default class Card {
 
   render() {
     const root = document.createElement('div')
-    createApp(CardView, {
+    createApp(CardUI, {
       blockData: this.data,
       handler: this.updateData,
     }).mount(root)

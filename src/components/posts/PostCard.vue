@@ -70,6 +70,9 @@ const props = defineProps({
 }
 
 .actions {
+  min-width: 6em;
+  text-align: right;
+
   .button {
     margin-left: 0.5em;
   }

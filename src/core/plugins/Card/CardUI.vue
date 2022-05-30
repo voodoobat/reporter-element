@@ -26,6 +26,7 @@
 
 <script setup>
 import { reactive } from 'vue'
+import { state2object } from '~/core/lib/state2object'
 
 const props = defineProps({
   blockData: {
@@ -38,12 +39,8 @@ const props = defineProps({
   },
 })
 
-const data2object = (data) => {
-  return JSON.parse(JSON.stringify(data))
-}
-
 const blockData = reactive(props.blockData)
-const onChange = () => props.handler(data2object(blockData))
+const onChange = () => props.handler(state2object(blockData))
 </script>
 
 <style lang="scss" module>
